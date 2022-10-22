@@ -1,3 +1,14 @@
 <?php
+define('ROOT', __DIR__);
 
-require_once __DIR__.'/src/config/bootstrap/index.php';
+require ROOT.'/vendor/autoload.php';
+
+
+use App\Kernel;
+use Symfony\Component\HttpFoundation\Request;
+
+$kernel = new Kernel('dev', true);
+$request = Request::createFromGlobals();
+$response = $kernel->handle($request);
+$response->send();
+$kernel->terminate($request, $response);
