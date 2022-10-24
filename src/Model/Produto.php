@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Model\Produto;
+namespace App\Model;
 
 use App\Model\Modelo;
 use App\Support\Str;
 
-class Produto extends Modelo implements ProdutoInterface
+class Produto extends Modelo
 {
     private ?int $id = null;
     private ?string $nome = null;

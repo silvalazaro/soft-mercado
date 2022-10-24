@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Service\Produto;
+namespace App\Service;
 
-use App\Model\Produto\Produto;
-use App\Repository\Produto\ProdutoRepository;
+use App\Model\TipoProduto;
+use App\Repository\TipoProdutoRepository;
 
-class ProdutoService
+class TipoProdutoService
 { 
-    private  ProdutoRepository $repository;
+    private  TipoProdutoRepository $repository;
 
     public function __construct()
     {
-        $this->repository = new ProdutoRepository();
+        $this->repository = new TipoProdutoRepository();
     }
 
     public function obterTodos()
@@ -19,10 +19,10 @@ class ProdutoService
         return $this->repository->todos();
     }
 
-    public function salvar($produto)
+    public function salvar($tipoProduto)
     {
-        $produtoObjeto = new Produto($produto);
-        return $this->repository->salvar($produtoObjeto);
+        $tipoProdutoObjeto = new TipoProduto($tipoProduto);
+        return $this->repository->salvar($tipoProdutoObjeto);
     }
 
 }

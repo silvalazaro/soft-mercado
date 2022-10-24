@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Model\Produto\Produto;
 use App\Service\Services;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

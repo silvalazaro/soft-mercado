@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\Produto;
+namespace App\Model;
 
 class Imposto
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Repository\Produto;
+namespace App\Repository;
 
 use App\Database\Database;
-use App\Model\Produto\Produto;
+use App\Model\Produto;
 use PDO;
 
 class ProdutoRepository

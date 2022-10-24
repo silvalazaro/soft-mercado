@@ -2,21 +2,20 @@
 
 namespace App\Controller;
 
-use App\Model\Produto\Produto;
 use App\Service\Services;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class ProdutoController
+class TipoProdutoController
 {
     public function todos()
     {
-        return new JsonResponse(Services::produto()->obterTodos());
+        return new JsonResponse(Services::tipoProduto()->obterTodos());
     }
 
     public function salvar(Request $request): JsonResponse
     {
-        $produtoServico = Services::produto();
+        $produtoServico = Services::tipoProduto();
         $resp = $produtoServico->salvar(json_decode($request->getContent()));
         return new JsonResponse($resp);
     }

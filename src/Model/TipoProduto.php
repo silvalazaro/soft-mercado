@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Model\Produto;
+namespace App\Model;
 
 use App\Model\Modelo;
 
 class TipoProduto extends Modelo
 {
-    private ?int $id;
-    private ?int $nome;
+    private ?int $id = null;
+    private ?string $nome = null;
+    private ?string $imposto = null;
     
-    protected array $serialize = ['nome', 'id'];
-    protected array $fillable = ['nome', 'id'];
+    protected array $serialize = ['nome', 'id', 'imposto'];
+    protected array $fillable = ['nome', 'id', 'imposto'];
 
     public function getId()
     {
@@ -20,5 +21,20 @@ class TipoProduto extends Modelo
     public function getNome()
     {
         return $this->nome;
+    }
+
+    public function getImposto()
+    {
+        return $this->imposto;
+    }
+
+    public function setNome(string $nome)
+    {
+        return $this->nome = $nome;
+    }
+
+    public function setImposto(string $imposto)
+    {
+        return $this->imposto = $imposto;
     }
 }

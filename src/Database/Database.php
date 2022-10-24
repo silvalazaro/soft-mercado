@@ -11,7 +11,7 @@ class Database
     private const HOST = 'localhost';
     private const DB = 'soft-mercado';
     private const USER = 'postgres';
-    private const PASSWORD = 'example';
+    private const PASSWORD = 'postgres';
     private static ?Database $instance = null;
     private ?PDO $pdo = null;
 

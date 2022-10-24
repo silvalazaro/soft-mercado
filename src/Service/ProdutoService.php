@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Service\Produto;
+namespace App\Service;
 
-use App\Model\Produto\Produto;
-use App\Repository\Produto\ProdutoRepository;
+use App\Model\Produto;
+use App\Repository\ProdutoRepository;
 
 class ProdutoService
 { 

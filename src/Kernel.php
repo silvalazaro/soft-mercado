@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Controller\ProdutoController;
+use App\Controller\TipoProdutoController;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -32,7 +33,7 @@ class Kernel extends BaseKernel
     {
         $routes->add('produtos_todos', '/produtos')->controller([ProdutoController::class, 'todos'])->methods(['GET']);
         $routes->add('produtos_salvar', '/produtos')->controller([ProdutoController::class, 'salvar'])->methods(['POST']);
-        $routes->add('tipo_produto_todos', '/produtos/tipos')->controller([ProdutoController::class, 'salvar'])->methods(['POST']);
-        $routes->add('tipo_produto_salvar', '/produtos')->controller([ProdutoController::class, 'salvar'])->methods(['POST']);
+        $routes->add('tipo_produto_todos', '/tipo-produtos')->controller([TipoProdutoController::class, 'todos'])->methods(['GET']);
+        $routes->add('tipo_produto_salvar', '/tipo-produtos')->controller([TipoProdutoController::class, 'salvar'])->methods(['POST']);
     }
 }

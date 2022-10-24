@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Repository\Produto;
+namespace App\Repository;
 
 use App\Database\Database;
-use App\Model\Produto\Produto;
+use App\Model\TipoProduto;
 use PDO;
 
-class ProdutoRepository
+class TipoProdutoRepository
 {
-    private string $tabela = 'produtos';
+    private string $tabela = 'tipo_produto';
 
     public function todos()
     {
@@ -20,17 +20,17 @@ class ProdutoRepository
         return $rows;
     }
 
-    public function salvar(Produto $produto)
+    public function salvar(TipoProduto $tipoProduto)
     {
-        $sql = 'INSERT INTO produtos (nome) VALUES(:nome)';
+        $sql = 'INSERT INTO '. $this->tabela . ' (nome) VALUES(:nome)';
 
         $pdo = Database::getPdo();
 
         $statement = $pdo->prepare($sql);
             $statement->execute([
-                ':nome' => $produto->getNome()
+                ':nome' => $tipoProduto->getNome()
             ]);
 
-        return $produto;
+        return $tipoProduto;
     }
 }
